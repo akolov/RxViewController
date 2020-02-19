@@ -36,6 +36,7 @@ public extension Reactive where Base: UIViewController {
     let source = self.methodInvoked(#selector(Base.viewDidLayoutSubviews)).map { _ in }
     return ControlEvent(events: source)
   }
+  @available(iOS 11.0, *)
   var viewSafeAreaInsetsDidChange: ControlEvent<Void> {
     let source = self.methodInvoked(#selector(Base.viewSafeAreaInsetsDidChange)).map { _ in }
     return ControlEvent(events: source)
